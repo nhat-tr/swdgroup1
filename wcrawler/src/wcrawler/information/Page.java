@@ -14,14 +14,24 @@
  */
 package wcrawler.information;
 
+import java.net.URL;
 
 public class Page {
     private String contentType;
     private String contentEncoding;
     private String contentCharset;
     
-    private Url url;
+    private URL url;
+    private String absoluteUrl;
 
+    public String getAbsoluteUrl() {
+        return absoluteUrl;
+    }
+
+    public void setAbsoluteUrl(String absoluteUrl) {
+        this.absoluteUrl = absoluteUrl;
+    }
+    
     public String getContentType() {
         return contentType;
     }
@@ -46,11 +56,11 @@ public class Page {
         this.contentCharset = contentCharset;
     }
 
-    public Url getUrl() {
+    public URL getUrl() {
         return url;
     }
 
-    public void setUrl(Url url) {
+    public void setUrl(URL url) {
         this.url = url;
     }
     

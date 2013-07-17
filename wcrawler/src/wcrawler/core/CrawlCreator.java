@@ -12,6 +12,7 @@
 package wcrawler.core;
 
 // This class handles creating "Crawler"
+import org.apache.log4j.Logger;
 import wcrawler._interface.ICrawlDecisionMaker;
 import wcrawler._interface.IHyperLinkParser;
 import wcrawler._interface.IPageRequester;
@@ -26,6 +27,8 @@ public class CrawlCreator {
     private ICrawlDecisionMaker crawlDecisionMaker;
     private CrawlConfiguration crawlConfiguration;
 
+    static Logger logger = Logger.getLogger(CrawlCreator.class);
+    
     public CrawlCreator(IPageRequester pageRequester, IScheduler scheduler, IHyperLinkParser hyperLinkParser, ICrawlDecisionMaker crawlDecisionMaker, CrawlConfiguration crawlConfiguration) {
         this.pageRequester = pageRequester;
         this.scheduler = scheduler;

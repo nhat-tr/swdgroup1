@@ -19,7 +19,17 @@ public class CrawledPage extends Page {
     private byte[] contentData;
     // size of a page in byte
     private long pageSizeInBytes;
+    
+    private String responseMessage;
 
+    public String getResponseMessage() {
+        return responseMessage;
+    }
+
+    public void setResponseMessage(String responseMessage) {
+        this.responseMessage = responseMessage;
+    }
+    
     public String getRawContent() {
         return rawContent;
     }

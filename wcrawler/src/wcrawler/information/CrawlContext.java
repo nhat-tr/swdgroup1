@@ -11,12 +11,13 @@
  */
 package wcrawler.information;
 
+import java.net.URL;
 import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class CrawlContext {
 
-    private Url rootUrl;
+    private URL rootUrl;
     private ConcurrentHashMap<String, String> crawledPages;
     private Date createdAtDatetime;
     private ConcurrentHashMap<String, String> downloadedPages;
@@ -34,11 +35,11 @@ public class CrawlContext {
         this.crawlFilterPattern = crawlFilterPattern;
     }
 
-    public Url getRootUrl() {
+    public URL getRootUrl() {
         return rootUrl;
     }
 
-    public void setRootUrl(Url rootUrl) {
+    public void setRootUrl(URL rootUrl) {
         this.rootUrl = rootUrl;
     }
 

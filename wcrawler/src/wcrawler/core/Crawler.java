@@ -11,6 +11,7 @@
  */
 package wcrawler.core;
 
+import org.apache.log4j.Logger;
 import wcrawler._interface.ICrawlDecisionMaker;
 import wcrawler._interface.IHyperLinkParser;
 import wcrawler._interface.IPageRequester;
@@ -24,7 +25,7 @@ public class Crawler {
     private IHyperLinkParser hyperLinkParser;
     private ICrawlDecisionMaker crawlDecisionMaker;
     private CrawlConfiguration crawlConfiguration;
-
+        
     public Crawler() {
     }
 
