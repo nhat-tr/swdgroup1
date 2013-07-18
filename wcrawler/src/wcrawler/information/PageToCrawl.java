@@ -16,5 +16,23 @@ package wcrawler.information;
 
 
 public class PageToCrawl extends Page {
+    private boolean isRetry;
+    private boolean isRoot;
 
+    public boolean isIsRetry() {
+        return isRetry;
+    }
+
+    public void setIsRetry(boolean isRetry) {
+        this.isRetry = isRetry;
+    }
+
+    public boolean isIsRoot() {
+        return isRoot;
+    }
+
+    public void setIsRoot(boolean isRoot) {
+        this.isRoot = isRoot;
+    }
+    
 }

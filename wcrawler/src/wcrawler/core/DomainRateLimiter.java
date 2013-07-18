@@ -14,7 +14,6 @@ package wcrawler.core;
 import com.google.common.util.concurrent.RateLimiter;
 import java.net.URL;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import org.apache.log4j.Logger;
 import wcrawler._interface.IDomainRateLimiter;
 
@@ -48,6 +47,7 @@ public class DomainRateLimiter implements IDomainRateLimiter {
         
         if(minCrawlDelayInMilliSecs < 1)
             throw new ArithmeticException("minCrawlDelayInMilliSecs");
+        // =============================
         
         // Get the greater value of new crawl-delay value or default crawl-delay value
         long millThatIsGreater = minCrawlDelayInMilliSecs > defaultMinCrawlDelayInMilliSecs ? minCrawlDelayInMilliSecs : defaultMinCrawlDelayInMilliSecs;

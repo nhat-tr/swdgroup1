@@ -21,7 +21,6 @@ import java.net.SocketTimeoutException;
 import java.net.URL;
 import wcrawler._interface.IPageRequester;
 import wcrawler.information.CrawlConfiguration;
-import wcrawler.information.CrawlContext;
 import wcrawler.information.CrawledPage;
 import wcrawler.information.PageToCrawl;
 
