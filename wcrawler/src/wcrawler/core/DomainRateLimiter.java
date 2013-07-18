@@ -33,23 +33,28 @@ public class DomainRateLimiter implements IDomainRateLimiter {
         _rateLimiterLookup = new ConcurrentHashMap<String, RateLimiter>();
     }
     
-    
+    // Implement rate limit, by getting the "ratelimiter" object from _rateLimiterLookup
     @Override
     public void rateLimit(URL url) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    // Add a domain and its crawl-delay value into a concurrenthashmap
     @Override
     public void addDomain(URL url, long minCrawlDelayInMilliSecs) {
+        // Check valid of input first 
         if(url == null)
             throw new NullPointerException("url");
         
         if(minCrawlDelayInMilliSecs < 1)
             throw new ArithmeticException("minCrawlDelayInMilliSecs");
         
-        
+        // Get the greater value of new crawl-delay value or default crawl-delay value
         long millThatIsGreater = minCrawlDelayInMilliSecs > defaultMinCrawlDelayInMilliSecs ? minCrawlDelayInMilliSecs : defaultMinCrawlDelayInMilliSecs;
+        // Create rateLimiter with that value
         RateLimiter rateLimiter = RateLimiter.create(millThatIsGreater);
+        // Add to _rateLimiterLookup. Each url will has its own rateLimiter
         _rateLimiterLookup.put(url.getAuthority(), rateLimiter);
+        _logger.debug("Add Domain \""+url.getAuthority()+"\" and RateLimiter with value "+millThatIsGreater);
     }
 }
